@@ -1,10 +1,11 @@
 const express = require('express')
 const axios = require('axios')
 const config = require('./.config')
+const cors = require('cors')
+
 
 const app = express()
-
-//axios.default.headers.common['Authorization'] = `Bearer ${config.yelp_api_key}`
+app.use(cors)
 
 let params = {
     headers: 
@@ -15,13 +16,11 @@ let params = {
 
 app.all("*", (req, res) => {
 
-    console.log(req.query.url)
     axios.get(req.query.url, params)
     .then(response => {
         res.json(response.data)
     })
     .catch(error => {
-        console.error(error)
         res.json(error)
     })
 }) 
