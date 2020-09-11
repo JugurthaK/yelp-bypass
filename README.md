@@ -1,6 +1,6 @@
-# Yelp API Proxy
+# Yelp API Proxy
 
-# How to use
+## How to use
 
 ```bash
 git clone https://github.com/JugurthaK/yelp-bypass.git && cd ./yelp-bypass
